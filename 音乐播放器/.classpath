@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="lib/mp3spi1.9.5.jar"/>
 	<classpathentry kind="lib" path="lib/json.jar"/>
 	<classpathentry kind="lib" path="lib/Gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/rt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

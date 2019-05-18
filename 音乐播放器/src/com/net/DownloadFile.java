@@ -169,10 +169,11 @@ public class DownloadFile {
 			return;
 		}
 		
+		
 		File[] files = new File[3];
-		files[0] = new File("D:/YunDownload/music", title + " - " + singer + ".mp3");
-		files[1] = new File("D:/YunDownload/image", title + " - " + singer + ".jpg");
-		files[2] = new File("D:/YunDownload/lyric", title + " - " + singer + ".lrc");
+		files[0] = new File("D:/YunMusic/music", title + " - " + singer + ".mp3");
+		files[1] = new File("D:/YunMusic/image", title + " - " + singer + ".jpg");
+		files[2] = new File("D:/YunMusic/lyric", title + " - " + singer + ".lrc");
 
 		URL[] urls = new URL[3];
 		try {
@@ -188,12 +189,17 @@ public class DownloadFile {
 			@Override
 			public void run() {
 				for (int i = 0; i < 3; i++) {
-
+					
+					File fileParent = files[i].getParentFile(); //文件夹
+					if(!fileParent.exists()){  
+					    fileParent.mkdirs();  
+					}
 					try {
 						if (files[i].exists()) {
 						files[i].delete();// 如果文件存在,删除并重建它
 						files[i].createNewFile();
 					} else {
+						//files[i].mkdirs(); 
 						files[i].createNewFile(); // 创建新文件,有同名的文件的话直接覆盖
 					}
 
