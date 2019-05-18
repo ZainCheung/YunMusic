@@ -139,6 +139,9 @@ public class ReadJSON {
 		JsonObject result;
 		try {
 			result = (JsonObject) parse.parse(new FileReader("file/localMusicJson.json"));
+			if (result.has("songs")) {
+				
+			
 		    JsonArray songs = result.get("songs").getAsJsonArray();//
 		    
 		    int num = result.get("num").getAsInt();//¸èÇúÊýÁ¿
@@ -182,7 +185,7 @@ public class ReadJSON {
 		    	allList.add(oneDataList);
 		    	
 		    }
-		    
+		    }
 		    
 		} catch (JsonIOException e) {
 			e.printStackTrace();
